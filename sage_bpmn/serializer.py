@@ -10,6 +10,7 @@ from sage_bpmn.models import (
     AtomicFlowElement,
     EndEvent,
     ExclusiveGateway,
+    InclusiveGateway,
     ExecutionListener,
     ExtensionProperty,
     ParallelGateway,
@@ -34,6 +35,7 @@ logger = logging.getLogger(__name__)
 GATEWAY_TO_CLASS = {
     BPMNTag.EXCLUSIVE_GATEWAY: ExclusiveGateway,
     BPMNTag.PARALLEL_GATEWAY: ParallelGateway,
+    BPMNTag.INCLUSIVE_GATEWAY: InclusiveGateway,
 }
 
 TAG_TO_CLASS = {
