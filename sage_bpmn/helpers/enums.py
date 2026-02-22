@@ -4,6 +4,7 @@ from enum import StrEnum
 class BPMNTag(StrEnum):
     START_EVENT = "startEvent"
     END_EVENT = "endEvent"
+    TASK = "task"
     USER_TASK = "userTask"
     SCRIPT_TASK = "scriptTask"
     SERVICE_TASK = "serviceTask"

@@ -18,6 +18,7 @@ from sage_bpmn.models import (
     ServiceTask,
     StartEvent,
     SubProcess,
+    Task,
     UserTask,
     ZeebeAssignment,
     ZeebeFormDefinition,
@@ -33,6 +34,7 @@ logger = logging.getLogger(__name__)
 TAG_TO_CLASS = {
     BPMNTag.START_EVENT: StartEvent,
     BPMNTag.END_EVENT: EndEvent,
+    BPMNTag.TASK: Task,
     BPMNTag.USER_TASK: UserTask,
     BPMNTag.EXCLUSIVE_GATEWAY: ExclusiveGateway,
     BPMNTag.PARALLEL_GATEWAY: ParallelGateway,
@@ -133,6 +135,9 @@ class BPMNParser:
         element_obj = None
 
         if tag_enum == BPMNTag.USER_TASK:
+            element_obj = Task(id=elem_id, name=name, documentation=documentation)
+        
+        elif tag_enum == BPMNTag.USER_TASK:
             element_obj = UserTask(id=elem_id, name=name, documentation=documentation)
             self._parse_user_task_extensions(elem, element_obj)
 
