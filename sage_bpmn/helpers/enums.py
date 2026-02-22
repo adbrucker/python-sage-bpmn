@@ -6,6 +6,7 @@ class BPMNTag(StrEnum):
     END_EVENT = "endEvent"
     INTERMEDIATE_THROW_EVENT = "intermediateThrowEvent"
     USER_TASK = "userTask"
+    MANUAL_TASK = "manualTask"
     RECEIVE_TASK = "receiveTask"
     SCRIPT_TASK = "scriptTask"
     SEND_TASK = "sendTask"

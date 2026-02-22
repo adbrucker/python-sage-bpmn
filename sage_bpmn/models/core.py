@@ -17,6 +17,7 @@ Definitions
 │   │   ├── BoundaryEvent
 │   │   ├── Task (base class)
 │   │   │   ├── UserTask
+│   │   │   ├── ManualTask
 │   │   │   ├── ReceiveTask
 │   │   │   ├── ServiceTask
 │   │   │   ├── ScriptTask
@@ -278,6 +279,17 @@ class UserTask(Task):
     headers: List[ZeebeHeader] = field(default_factory=list)
 
 
+class ManualTask(Task):
+    """
+    Represents a BPMN ManualTask, performed by a human user.
+
+    XML Example:
+    ------------
+    <manualTask id="ManualTask_1" name="Review Request" />
+    """
+    pass
+
+
 @dataclass
 class ReceiveTask(Task):
     """
@@ -287,8 +299,6 @@ class ReceiveTask(Task):
     ------------
     <sendTask id="ReceiveTask_1" name="Receive Message" />
     """
-
-    pass
 
 
 @dataclass

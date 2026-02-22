@@ -14,6 +14,7 @@ class ConsoleObserver(ExecutionObserver):
         "Task": "✅",
         "UserTask": "👤",
         "ReceiveTask": "📨",
+        "ManualTask": "👥",
         "ServiceTask": "⚙️",
         "ScriptTask": "📜",
         "SendTask": "✉",
