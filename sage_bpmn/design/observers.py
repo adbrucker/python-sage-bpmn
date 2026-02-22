@@ -13,6 +13,7 @@ class ConsoleObserver(ExecutionObserver):
         "EndEvent": "🔴",
         "Task": "✅",
         "UserTask": "👤",
+        "ManualTask": "👥",
         "ServiceTask": "⚙️",
         "ScriptTask": "📜",
         "ExclusiveGateway": "🔀",

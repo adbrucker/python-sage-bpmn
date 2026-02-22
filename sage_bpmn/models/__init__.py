@@ -17,6 +17,7 @@ from .core import (
     SubProcess,
     Task,
     UserTask,
+    ManualTask,
 )
 from .lanes import Lane, LaneSet
 from .process import AtomicFlowElement, Process
@@ -51,7 +52,7 @@ __all__ = [
     "InclusiveGateway",
     "EventBasedGateway",
     "Task",
-    "UserTask",
+    "ManualTask",
     "ServiceTask",
     "ScriptTask",
     "TextAnnotation",

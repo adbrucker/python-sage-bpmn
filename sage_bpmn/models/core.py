@@ -17,6 +17,7 @@ Definitions
 │   │   ├── BoundaryEvent
 │   │   ├── Task (base class)
 │   │   │   ├── UserTask
+│   │   │   ├── ManualTask
 │   │   │   ├── ServiceTask
 │   │   │   ├── ScriptTask
 │   │   │   └── SubProcess (contains its own flowElements)
@@ -271,6 +272,18 @@ class UserTask(Task):
     inputs: List[ZeebeInput] = field(default_factory=list)
     outputs: List[ZeebeOutput] = field(default_factory=list)
     headers: List[ZeebeHeader] = field(default_factory=list)
+
+
+@dataclass
+class ManualTask(Task):
+    """
+    Represents a BPMN ManualTask, performed by a human user.
+
+    XML Example:
+    ------------
+    <manualTask id="ManualTask_1" name="Review Request" />
+    """
+    pass
 
 
 @dataclass

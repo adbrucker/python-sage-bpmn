@@ -19,6 +19,7 @@ from sage_bpmn.models import (
     StartEvent,
     SubProcess,
     UserTask,
+    ManualTask,
     ZeebeAssignment,
     ZeebeFormDefinition,
     ZeebeHeader,
@@ -34,6 +35,7 @@ TAG_TO_CLASS = {
     BPMNTag.START_EVENT: StartEvent,
     BPMNTag.END_EVENT: EndEvent,
     BPMNTag.USER_TASK: UserTask,
+    BPMNTag.MANUAL_TASK: ManualTask,
     BPMNTag.EXCLUSIVE_GATEWAY: ExclusiveGateway,
     BPMNTag.PARALLEL_GATEWAY: ParallelGateway,
     BPMNTag.SUB_PROCESS: SubProcess,
@@ -135,6 +137,9 @@ class BPMNParser:
         if tag_enum == BPMNTag.USER_TASK:
             element_obj = UserTask(id=elem_id, name=name, documentation=documentation)
             self._parse_user_task_extensions(elem, element_obj)
+        
+        if tag_enum == BPMNTag.MANUAL_TASK:
+            element_obj = ManualTask(id=elem_id, name=name, documentation=documentation)
 
         elif tag_enum == BPMNTag.SCRIPT_TASK:
             script = self._parse_script(elem)
