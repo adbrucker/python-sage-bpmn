@@ -134,7 +134,7 @@ class BPMNParser:
 
         element_obj = None
 
-        if tag_enum == BPMNTag.USER_TASK:
+        if tag_enum == BPMNTag.TASK:
             element_obj = Task(id=elem_id, name=name, documentation=documentation)
         
         elif tag_enum == BPMNTag.USER_TASK:
